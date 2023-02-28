@@ -140,7 +140,7 @@ pub struct IoRead<R>
 where
     R: io::Read,
 {
-    reader: OffsetReader<R>,
+    pub reader: OffsetReader<R>,
     scratch: Vec<u8>,
     ch: Option<u8>,
 }
@@ -275,8 +275,8 @@ where
 
 #[cfg(feature = "std")]
 #[derive(Debug)]
-struct OffsetReader<R> {
-    reader: R,
+pub struct OffsetReader<R> {
+    pub reader: R,
     offset: u64,
 }
 

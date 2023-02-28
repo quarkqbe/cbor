@@ -127,7 +127,7 @@ where
 /// A Serde `Deserialize`r of CBOR data.
 #[derive(Debug)]
 pub struct Deserializer<R> {
-    read: R,
+    pub read: R,
     remaining_depth: u8,
     accept_named: bool,
     accept_packed: bool,
